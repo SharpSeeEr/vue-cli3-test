@@ -13,6 +13,7 @@
 // $github-invert: findColorInvert($github);
 
 @import "~bulma/sass/utilities/derived-variables";
+@import "_derived-variables";
 
 // 3. Add new color variables to the color map.
 // $addColors: (
@@ -26,6 +27,51 @@
 @import "~buefy/src/scss/buefy";
 
 // 4. Provide custom buefy overrides and site styles here
+@import "navigation-drawer";
 
+.hidden {
+  display:none;
+}
 
+.main-body {
+  position: relative;
+}
+.main-content {
+  padding: $app-padding $app-padding $app-padding ($drawer-width + $app-padding);
+  // display: inline-block;
+}
+.navbar-burger {
+  margin-left: 0;
+}
+.navbar-title {
+  font-size: $size-4;
+  font-weight: bold;
+}
+
+.pagination {
+  margin-bottom: 0.75rem;
+}
+
+.field.has-addons:focus {
+  .control {
+    &:not(:last-child) {
+      .input {
+        clip-path: inset(-.125em 1px -.125em -.125em);
+      }
+      .button {
+        box-shadow: 0 0 0 0.125em rgba(33, 150, 242, 0.25);
+        clip-path: inset(-.125em 1px -.125em -.125em);  
+      }
+    }
+    +.control {
+      .input {
+        clip-path: inset(-.125em -.125em -.125em 0);
+      }
+      .button {
+        box-shadow: 0 0 0 0.125em rgba(33, 150, 242, 0.25);
+        clip-path: inset(-.125em -.125em -.125em 0);  
+      }
+    }
+  }
+}
 

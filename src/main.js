@@ -5,7 +5,10 @@ import store from './store'
 import Buefy from 'buefy'
 import './scss/app.scss'
 
-Vue.use(Buefy)
+Vue.use(Buefy, {
+  defaultIconPack: 'fas',
+  defaultContainerElement: '#content'
+})
 
 Vue.config.productionTip = false
 
