@@ -3,7 +3,7 @@
     <h1>Profile</h1>
     <!--
       First Name, Last Name
-      Birtdate
+      Birthdate
       Address - State should be a drop down
       pHone
       email
