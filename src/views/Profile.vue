@@ -17,14 +17,14 @@
     <b-field label="Address">
       <b-input placeholder="City"></b-input>
     </b-field>
-    
+
     <b-field label="">
       <b-select placeholder="Select State">
         <option v-for="state of usstates" :key="state" :value="state">{{state}}</option>
       </b-select>
     </b-field>
 
-    <b-field label="">
+    <b-field label="zip">
       <b-input placeholder="Zip Code"></b-input>
     </b-field>
 
