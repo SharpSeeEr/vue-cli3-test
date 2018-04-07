@@ -1,18 +1,27 @@
 <template>
   <form>
     <h1>Profile</h1>
-    <b-field label="Name">
-      <b-input placeholder="First Name"></b-input>
-      <b-input placeholder="Last Name"></b-input>
-    </b-field>
-
-    <b-field label="Birthdate">
-      <b-datepicker
-        placeholder="mm/dd/yyyy"
-        icon="calendar"
-        :readonly="false">
-      </b-datepicker>
-    </b-field>
+    <div class="columns">
+      <div class="column">
+        <b-field label="First Name">
+          <b-input placeholder="First Name"></b-input>
+        </b-field>
+      </div>
+      <div class="column">
+        <b-field label="Last Name">
+          <b-input placeholder="Last Name"></b-input>
+        </b-field>
+      </div>
+      <div class="column">
+        <b-field label="Birthdate">
+          <b-datepicker
+            placeholder="mm/dd/yyyy"
+            icon="calendar"
+            :readonly="false">
+          </b-datepicker>
+        </b-field>
+      </div>
+    </div>
 
     <b-field label="Address">
       <b-input placeholder="City"></b-input>
