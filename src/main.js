@@ -5,6 +5,7 @@ import store from './store'
 import Buefy from 'buefy'
 import './scss/app.scss'
 import MInput from './components/MInput.vue'
+import SaveButton from './components/SaveButton.vue'
 import BTimepicker from './components/BTimepicker.vue'
 
 Vue.use(Buefy, {
@@ -12,6 +13,7 @@ Vue.use(Buefy, {
   defaultContainerElement: '#content'
 })
 Vue.component('m-input', MInput)
+Vue.component('save-button', SaveButton)
 Vue.component('b-timepicker', BTimepicker)
 Vue.config.productionTip = false
 
