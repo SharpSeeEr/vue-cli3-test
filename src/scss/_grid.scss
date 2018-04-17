@@ -22,6 +22,7 @@
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 4;
+    overflow: auto;
   }
   .grid-main {
     grid-column: 2 / 3;

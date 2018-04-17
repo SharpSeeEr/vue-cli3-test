@@ -7,6 +7,7 @@ import './scss/app.scss'
 import MInput from './components/MInput.vue'
 import SaveButton from './components/SaveButton.vue'
 import BTimepicker from './components/BTimepicker.vue'
+import Pizza from './components/pizza.vue'
 
 Vue.use(Buefy, {
   defaultIconPack: 'fas',
@@ -15,6 +16,8 @@ Vue.use(Buefy, {
 Vue.component('m-input', MInput)
 Vue.component('save-button', SaveButton)
 Vue.component('b-timepicker', BTimepicker)
+Vue.component('pizza', Pizza)
+
 Vue.config.productionTip = false
 
 new Vue({
