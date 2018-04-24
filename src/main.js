@@ -12,9 +12,7 @@ Vue.use(Buefy, {
   defaultIconPack: 'fas',
   defaultContainerElement: '#content'
 })
-console.log(Components)
-registerComponents(Views)
-registerComponents(Components)
+registerComponents(Object.assign({}, Components, Views))
 
 Vue.config.productionTip = false
 
