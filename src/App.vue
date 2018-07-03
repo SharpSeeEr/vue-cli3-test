@@ -4,7 +4,8 @@
       <nav class="navbar is-primary">
         <div class="navbar-brand">
           <a class="navbar-item" @click="toggleNavDrawer">
-            <b-icon icon="chevron-left" size="large"></b-icon>
+            <b-icon icon="chevron-left" size="large" class="navbar-chevron"></b-icon>
+            <b-icon icon="bars" size="large" class="navbar-bars"></b-icon>
           </a>
           <div class="navbar-burger burger" data-target="navMenu">
             <span></span>
