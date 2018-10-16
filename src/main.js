@@ -3,18 +3,17 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Buefy from 'buefy'
+import { registerComponents } from './util/helpers'
+import * as Views from './views'
+import * as Components from './components'
 import './scss/app.scss'
-import MInput from './components/MInput.vue'
-import SaveButton from './components/SaveButton.vue'
-import BTimepicker from './components/BTimepicker.vue'
 
 Vue.use(Buefy, {
   defaultIconPack: 'fas',
   defaultContainerElement: '#content'
 })
-Vue.component('m-input', MInput)
-Vue.component('save-button', SaveButton)
-Vue.component('b-timepicker', BTimepicker)
+registerComponents(Object.assign({}, Components, Views))
+
 Vue.config.productionTip = false
 
 new Vue({
@@ -22,5 +21,3 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
-
-console.log('Done!')
