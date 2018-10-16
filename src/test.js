@@ -9,6 +9,7 @@ function createRange (length, start = 0) {
 createRange(12)
 createRange(12, 1)
 createRange(12, 10)
+
 function myFunc () {
   for (let i = 1; i <= 5; i++) {
     console.log(i)

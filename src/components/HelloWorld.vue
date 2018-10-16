@@ -33,7 +33,7 @@
 <script>
 export default {
   name: 'HelloWorld',
-  data() {
+  data () {
     return {
       time: '03:50pm'
     }
