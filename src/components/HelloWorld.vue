@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <b-timepicker v-model="time"></b-timepicker>
     <p>
       For guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -32,6 +33,11 @@
 <script>
 export default {
   name: 'HelloWorld',
+  data () {
+    return {
+      time: '03:50pm'
+    }
+  },
   props: {
     msg: String
   }

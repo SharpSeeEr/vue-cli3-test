@@ -1,0 +1,193 @@
+@import "variables";
+
+.time-picker {
+  display: inline-block;
+  .card-header {
+    &.is-primary {
+      background-color: $primary;
+    }
+  }
+  .card-content {
+    padding: 0;
+  }
+  .card-header-title {
+    color: #fff;
+    display: flex;
+    line-height: 1;
+    justify-content: flex-end;
+  
+    .time-picker__title__btn {
+      cursor: pointer;
+      opacity: .6;
+      &:hover, &.active {
+        opacity: 1;
+      }
+    }
+    .time-picker-title__time { 
+      white-space: nowrap;
+      span {
+        align-items: center;
+        display: inline-flex;
+        height: $time-picker-time-font-size;
+        font-size: $time-picker-time-font-size;
+        justify-content: center;
+      }
+    }
+    .time-picker-title__ampm {
+      align-self: flex-end;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      margin: 8px 0 6px 8px;
+      text-transform: uppercase;
+    
+      div:only-child {
+        flex-direction: row;
+      }
+    }
+  }
+  
+}
+
+
+
+
+
+.picker__title--landscape {
+  .time-picker-title {
+    flex-direction: column;
+    justify-content: center;
+    height: 100%
+  }
+  .time-picker-title__time {
+    text-align: right;
+
+    .picker__title__btn,
+    span {
+      height: 55px;
+      font-size: 55px;
+    }
+  }
+  .time-picker-title__ampm {
+    margin: 16px 0 0;
+    align-self: initial;
+    text-align: center;
+  }
+}
+
+
+.time-picker-clock {
+  // Outer border circle of clock
+  border-radius: 50%;
+  position: relative;
+  // transition: $primary-transition;
+  user-select: none;
+  background-color: $grey-lighter;
+  width: 100%;
+  height: 100%;
+  
+  &:after { 
+    // Dot in center
+    background: #000;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: $time-picker-endpoint-size + 2px;
+    height: $time-picker-endpoint-size + 2px;
+    z-index: 10;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    
+  }
+
+  &__hand {
+    height: calc(50% - 28px);
+    width: 2px;
+    bottom: 50%;
+    left: calc(50% - 1px);
+    transform-origin: center bottom;
+    position: absolute;
+    will-change: transform;
+    z-index: 1;
+    background-color: $primary;
+    border-color: $primary;
+
+    &:before {
+      background: transparent;
+      border-width: 2px;
+      border-style: solid;
+      border-color: inherit;
+      border-radius: 100%;
+      width: $time-picker-endpoint-size + 2px;
+      height: $time-picker-endpoint-size + 2px;
+      content: '';
+      position: absolute;
+      top: -3%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   height: $time-picker-endpoint-size;
+    //   width: $time-picker-endpoint-size;
+    //   top: 100%;
+    //   left: 50%;
+    //   border-radius: 100%;
+    //   border-style: solid;
+    //   border-color: inherit;
+    //   background-color: inherit;
+    //   transform: translate(-50%, -50%);
+    // }
+  }
+  > span {
+    align-items: center;
+    border-radius: 100%;
+    cursor: default;
+    display: flex;
+    font-size: $time-picker-number-font-size;
+    justify-content: center;
+    left: calc(50% - #{$time-picker-indicator-size} / 2);
+    height: $time-picker-indicator-size;
+    position: absolute;
+    text-align: center;
+    top: calc(50% - #{$time-picker-indicator-size} / 2);
+    width: $time-picker-indicator-size;
+    user-select: none;
+  
+    > span {
+      z-index: 1;
+    }
+    &:before, &:after {
+      content: '';
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 14px;
+      width: 14px;
+      transform: translate(-50%, -50%);
+    }
+    &:after, &:before {
+      height: $time-picker-indicator-size;
+      width: $time-picker-indicator-size;
+    }
+    &.active {
+      color: #fff;
+      background-color: $primary;
+      cursor: default;
+      z-index: 2;
+    }
+    &.disabled {
+      pointer-events: none;
+    }
+  }
+}
